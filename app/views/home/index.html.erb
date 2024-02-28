@@ -1,14 +1,12 @@
-
 <nav id="header">
     <%= image_tag('logo.png', class: 'logo') %>
     <ul class="topnav">
-      <li><span>Features</span></li>
-      <li><span>Resources</span></li>
-      <li><span>Pricing</span></li>
-      <li><span class="login"><%= link_to "Log in", new_user_session_path %></span></li>
+      <li class="topnav-li"><a href="#">Features</a></li>
+      <li class="topnav-li"><a href="#">Resources</a></li>
+      <li class="topnav-li"><a href="#">Pricing</a></li>
+      <li class="topnav-li"><span class="login"><%= link_to "Log in", new_user_session_path %></span></li>
     </ul>
 </nav>
-
 
 <div class="home">
   <p class="title">

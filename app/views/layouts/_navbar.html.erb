@@ -1,0 +1,24 @@
+<nav class="side-nav">
+      
+  <ul class="side-ul">
+    <p class="nav-title"><%= current_user.email %></p>
+    <li class="side-li"><%= link_to "Add Category", new_task_category_path %> </li>
+    <li class="side-li"><a href="#">Today</a></li>
+
+    <br />
+    <p class="nav-title"><strong>My To-do's</strong></p>
+    <% @task_categories.each do |task_category| %>
+      <li class="side-li">
+
+        <span class="pin-and-link">
+          <span class="emoji-pin">📌</span>
+        <%= link_to task_category.name, task_category_path(task_category) %> 
+        </span>
+
+      </li>
+    <% end %>
+
+    <li class="side-button"><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "signout" %></li>
+  </ul>
+
+</nav>

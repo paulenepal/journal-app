@@ -1,7 +1,16 @@
-<h1>Edit Category</h1>
+<%= render "layouts/navbar" %>
 
-<%= render 'form', task_category: @task_category %>
+<div class="spacing">
+  
+  <div class="main-container">
 
-<br>
+    <h1>Edit Category</h1>
 
-<%= link_to 'Back to Main', task_categories_path %>
+    <%= render 'form', task_category: @task_category %>
+
+    <br />
+    <%= link_to 'Back to Main', task_categories_path %>
+
+  </div>
+  
+</div>

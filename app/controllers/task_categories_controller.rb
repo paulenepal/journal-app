@@ -1,13 +1,14 @@
 class TaskCategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_task_categories, only: [:index, :edit, :new]
   
   def index
       @task_categories = current_user.task_categories
   end
 
   def show
-    authorize_user_for_task_category(@task_category)
+    authorize_user(@task_category)
   end
 
   def new
@@ -49,10 +50,14 @@ class TaskCategoriesController < ApplicationController
     @task_category = TaskCategory.find(params[:id])
   end
 
-  def authorize_user_for_task_category(task_category)
+  def authorize_user(task_category)
     unless task_category.user == current_user
       redirect_to task_categories_path, alert: "You don't have permission to access this task category."
     end
+  end
+
+  def set_task_categories
+    @task_categories = current_user.task_categories.all
   end
 
 end
