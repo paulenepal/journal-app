@@ -1,0 +1,11 @@
+<%= form_with(model: task_category) do |form| %>
+    <p>
+        <%= form.label :name, "Category Name" %><br>
+        <%= form.text_field :name %>
+    </p>
+
+    <div class="button">
+        <%= form.submit "Submit" %>
+    </div> <br>
+
+<% end %>

@@ -1,0 +1,15 @@
+<h1> Show Category </h1>
+
+<p> Category: <%= @task_category.name %> </p>
+<p>
+    Task:
+    <% @task_category.tasks.each do |task| %>
+      <ul>
+        <li><%= task.name %></li>
+      </ul>
+    <% end %>
+</p>
+<p> Created at: <%= @task_category.created_at %> </p>
+<p> Updated at: <%= @task_category.updated_at %> </p>
+
+<%= link_to 'Back to Main', task_categories_path %>

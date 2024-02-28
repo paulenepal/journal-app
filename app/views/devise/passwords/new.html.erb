@@ -1,0 +1,33 @@
+<div class="login-container">
+  <section class="login">
+    <div class="login-box">
+      <div class="login-box-main">
+        <h2 class="login-title">Forgot your Password?</h2><br />
+
+        <h4 style="font-weight: 300">To reset your password, please enter the email address of your MinimaList account.</h4><br />
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email..." %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Send me reset password instructions" %>
+            </div>
+          <% end %>
+
+        <p style="text-align: center">Already have an account? <%= render "devise/shared/links" %></p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="storyset">
+    <div class="storyset-img">
+      <%= image_tag('forgot.svg', class: 'img') %>
+    </div>
+  </section>
+
+</div>

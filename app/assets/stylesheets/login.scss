@@ -1,0 +1,146 @@
+@import 'variables';
+
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  .login {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    //background-color: green;
+
+    .login-box{
+      width: 95%;
+      height: 60%;
+      display: flex;
+      //background-color: yellow;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: end;
+
+      .login-box-main {
+        //background-color: orange;
+        width: 70%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 0 30px 0 30px;
+
+        form {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .storyset{
+    width: 500px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+        
+    .storyset-img {
+      width: 85%;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 650px;
+      }
+    }
+  }
+}
+
+.field {
+  width: 100%;
+  height: 65px;
+  padding: 6px 15px;
+  margin-bottom: 10px;
+  //background-color: aqua;
+  border: 1px solid gray;
+  border-radius: 10px;
+
+  label {
+    font-size: 14px;
+  }
+
+  input[type=email], input[type=password] {
+    width: 100%;
+    height: 24px;
+    outline: none;
+    border: none;
+    //padding: 3px 5px;
+    font-family: inherit;
+    font-size: 18px;
+    //background-color: aqua;
+  }
+}
+
+.actions {
+  margin: 8px 0 8px 0;
+  // background-color: aqua;
+  width: 100%;
+  height: 50px;
+
+  input[type=submit] {
+    padding: 8px 0 8px 0;
+    width: 100%;
+    height: 95%;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: $dark-pink;
+    color: white;
+
+    &:hover {
+      background-color: $rbrown;
+      color: white;
+    }
+  }
+}
+
+.login-title {
+  text-align: left !important;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.alert {
+  color: red;
+  margin: 3px 0 3px 0;
+}
+
+.login-with {
+  width: 100%;
+  height: 45px;
+  padding: 6px 15px;
+  margin: 0 0 6px 0;
+  //background-color: aqua;
+  border: 1px solid rgba(128, 128, 128, 0.369);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  display: inline;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  span {
+    margin-left: 6px;
+  }
+}
