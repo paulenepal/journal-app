@@ -1,8 +1,13 @@
 <nav class="side-nav">
       
   <ul class="side-ul">
-    <p class="nav-title"><%= current_user.email %></p>
-    <li class="side-li"><%= link_to "Add Category", new_task_category_path %> </li>
+    <p class="nav-title">
+      <i class="fa-solid fa-circle-user fa-xl" style="color: #c587ae;"></i>
+      <%= current_user.email %>
+    </p>
+    <li class="side-li">
+      <%= link_to "Add Category", new_task_category_path %>
+    </li>
     <li class="side-li"><a href="#">Today</a></li>
 
     <br />
