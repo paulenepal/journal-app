@@ -1,0 +1,142 @@
+@import 'variables';
+
+.spacing {
+    margin-left: 25%;
+    margin-right: 5%;
+    padding:1px 16px;
+    height:100%;
+    //background-color: yellow;
+  
+    .main-container {
+      margin-top: 90px;
+      height: max-content;
+      //background-color: aquamarine;
+    }
+  }
+
+.transparent-text {
+    color: rgba(0, 0, 0, 0.231);
+    font-size: 12px;
+}
+
+// .table-container {
+//     width: 90%;
+//     margin: auto;
+
+//     .table {
+//         width: 100%;
+//         border-collapse: collapse;
+//     }
+
+//     .table-row td {
+//         width: 90%;
+//         padding: 10px;
+//         border-bottom: 2px solid rgba(128, 128, 128, 0.774);
+//     }
+// }
+
+
+.table-container {
+    table {
+      width: 90%;
+      border-collapse: collapse;
+      margin: auto;
+  
+      .table-row {
+        td {
+          padding: 8px;
+          border-bottom: 2px solid rgba(128, 128, 128, 0.774);
+        }
+  
+        .task-name {
+          width: 90%; /* Adjust the width as needed */
+          position: relative;
+  
+          .desc {
+            margin-top: 5px;
+            color: #555;
+  
+            i {
+              margin-right: 5px;
+            }
+          }
+        }
+  
+        .task-btn {
+          width: 3%;
+          text-align: center;
+          color: $blue-green;
+  
+          a, form {
+            text-align: center;
+            display: inline-block;
+            margin-left: 5px;
+            padding: 4px
+          }
+
+          .del-btn {
+            border: none;
+            font-family: inherit;
+            background-color: transparent;
+            font-size: 18px;
+
+            &:hover {
+                cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+.desc {
+    margin-left: 15px;
+    font-size: 12px;
+    color: gray;
+
+    .fa-note-sticky {
+        margin-right: 4px;
+    }
+
+    .fa-calendar {
+        margin-left: 18px;
+    }
+}
+
+.fa-hashtag {
+    margin: 0 10px 0 10px;
+}
+
+.act-container {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+
+.add-link {
+    display: inline-block;
+    position: relative;
+    text-align: right;
+  
+    .add-text {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(-10px, -50%);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+  
+      font-size: 16px;
+      padding-left: 5px;
+      margin-left: 14px;
+    }
+  
+    &:hover .add-text {
+      opacity: 1;
+    }
+  }
+  
