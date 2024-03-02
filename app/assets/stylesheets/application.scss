@@ -14,13 +14,18 @@
  *= require_self
  */
 
+@import "font-awesome";
 @import 'fonts';
-@import 'home';
 @import 'variables';
-@import 'login';
+
 @import 'nav';
 @import 'notice';
-@import "font-awesome";
+
+@import 'login';
+@import 'home';
+@import 'show';
+@import 'form';
+
 
 * {
     padding: 0;
