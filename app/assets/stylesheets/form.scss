@@ -1,0 +1,28 @@
+@import 'variables';
+
+
+
+
+
+.back-container {
+  width: 100%;
+
+  .bck-btn {
+    width: 50px;
+    padding: 8px 18px; 
+    background-color: $bpink;  
+    font-size: 0.875rem; 
+    border-radius: 0.375rem; 
+    box-shadow: 0 2px 4px $hover-color;
+
+      &:hover {
+        background-color: $rose;
+      }
+    }
+
+    .fa-chevron-left {
+      color: $cream;
+      text-align: center;
+    }
+
+}
