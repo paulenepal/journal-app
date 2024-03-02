@@ -1,7 +1,7 @@
 class TaskCategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task_category, only: [:show, :edit, :update, :destroy]
-  before_action :set_task_categories, only: [:index, :edit, :new]
+  before_action :set_task_categories, only: [:index, :edit, :new, :show, :destroy]
   
   def index
       @task_categories = current_user.task_categories
@@ -18,7 +18,7 @@ class TaskCategoriesController < ApplicationController
   def create
     @task_category = current_user.task_categories.build(task_category_params)
     if @task_category.save
-      redirect_to task_categories_path
+      redirect_to task_categories_path, notice: "Yay! You've taken the first step towards productivity by successfully creating a category! 🥳"
     else
       render :new
     end
@@ -29,7 +29,7 @@ class TaskCategoriesController < ApplicationController
 
   def update
     if @task_category.update(task_category_params)
-      redirect_to task_categories_path
+      redirect_to task_categories_path, notice: "Way to go! You've boosted productivity by editing a category! 🫰"
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class TaskCategoriesController < ApplicationController
 
   def destroy
     @task_category.destroy
-    redirect_to task_categories_path
+    redirect_to task_categories_path, notice: "Awesome! You've made a decisive move in boosting productivity by successfully deleting a category! 🤟"
   end
 
   private
