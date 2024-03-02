@@ -15,4 +15,11 @@ Rails.application.routes.draw do
     resources :tasks, shallow: true
   end
   
+  resources :task do
+    collection do
+      get :show_today # custom route to show task due todayy
+      get :show_completed #show commpleted task
+    end
+  end
+  
 end
