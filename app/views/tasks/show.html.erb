@@ -1,4 +1,20 @@
-<h3>Task Name: <%= @task.name %> </h3>
-<h3>Description: <%= @task.description %> </h3>
-<h3>Due Date: <%= @task.due_date %> </h3>
-<h3>Completed: <%= @task.completed ? 'Yes' : 'No' %> </h3>
+<%= render "layouts/navbar" %>
+<div class="spacing">
+  <div class="main-container">
+
+    <h1><%= @task.name %> </h1>
+    <h3>Description: <%= @task.description %> </h3>
+    <h3>Due Date: <%= format_datetime(@task.due_date) %> </h3>
+    <h3>Completed: <%= @task.completed ? 'Yes' : 'No' %> </h3>
+    <br />
+
+    <div class="back-container">
+      <div class="bck-btn">
+        <%= link_to task_category_path(@task.task_category) do %>
+          <i class="fa-solid fa-chevron-left fa-xl"></i>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
