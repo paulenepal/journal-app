@@ -2,25 +2,40 @@
       
   <ul class="side-ul">
     <p class="nav-title">
-      <i class="fa-solid fa-circle-user fa-xl" style="color: #c587ae;"></i>
+      <i class="fa-solid fa-circle-user fa-xl fa-nav" style="color: #c587ae;"></i>
       <%= current_user.email %>
     </p>
     <li class="side-li">
-      <%= link_to "Add Category", new_task_category_path %>
+        <span class="pin-and-link">
+          <span class="emoji-pin">
+            <i class="fa-solid fa-plus fa-nav" style="color: #e3008c;"></i>
+          </span>
+          <%= link_to "Add Category", new_task_category_path %>
+        </span>
     </li>
-    <li class="side-li"><a href="#">Today</a></li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-day fa-nav" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Today", show_today_task_index_path %>
+      </span>
+    </li>
 
     <br />
-    <p class="nav-title"><strong>My To-do's</strong></p>
-    <% @task_categories.each do |task_category| %>
-      <li class="side-li">
+    <p class="nav-title"><strong><%= link_to "My Plans", task_categories_path, class: "link" %></strong></p>
+    <% if @task_categories %>
+      <% @task_categories.each do |task_category| %>
+        <li class="side-li">
 
-        <span class="pin-and-link">
-          <span class="emoji-pin">📌</span>
-        <%= link_to task_category.name, task_category_path(task_category) %> 
-        </span>
+          <span class="pin-and-link">
+            <span class="emoji-pin">📌</span>
+            <%= link_to task_category.name, task_category_path(task_category) %> 
+          </span>
 
-      </li>
+        </li>
+      <% end %>
     <% end %>
 
     <li class="side-button"><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "signout" %></li>
