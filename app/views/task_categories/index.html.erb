@@ -3,37 +3,29 @@
 <div class="spacing">
   
   <div class="main-container">
-    <h1>🎯 My To-do's</h1>
-    <br />
+
+      <h1>🎯 My Plans</h1><br />
+      <p class="add">
+        <%= link_to new_task_category_path, class: "add-link" do %>
+          <i class="fa-solid fa-plus fa-lg" style="color: #ff8787;"></i>
+          <span class="add-text">Add Category</span>
+        <% end %>
+      </p> <br />
 
     <% @task_categories.each do |task_category| %>
       <p>
-        <strong><%= task_category.name %></strong> | 
-        <%= link_to "Edit", edit_task_category_path(task_category) %> 
-        <%= link_to "Show", task_category_path(task_category) %> 
-        <%= link_to "Add Task", new_task_category_task_path(task_category) %>
+        <strong><i class="fa-solid fa-hashtag" style="color: #9c9fa5;"></i><%= task_category.name %></strong>
+        <span class="act-container"> 
+          <span class="link-to">
+            <%= link_to "Edit", edit_task_category_path(task_category) %> 
+            <%= link_to "Show", task_category_path(task_category) %>
+            <%= link_to "Add Task", new_task_category_task_path(task_category) %>
+          </span> 
+          <%= button_to "Delete", task_category_path(task_category), method: :delete, onclick: "return confirm('Are you sure?');" %>
+        </span>
       </p>
-
-      <% if task_category.tasks.any? %>
-        <% task_category.tasks.each do |task| %>
-          <ul>
-            <li>
-              <%= task.name %> | 
-              <%= link_to "Edit", edit_task_path(task) %> | 
-              <%= link_to "Show", task_path(task) %>
-            </li>
-          </ul>
-        <% end %>
-      <% else %>
-        <p>Start small (or dream big)... Add a task to start your productivity.</p>
-      <% end %>
-      <br>
-
+      <br>  
     <% end %>
-
-    <p>
-      <%= link_to "Add Category", new_task_category_path %> 
-    <p> <br>
+    
   </div>
-
 </div>
