@@ -1,0 +1,14 @@
+<%= render "layouts/navbar" %>
+<div class="spacing">
+  <div class="main-container">
+    <% @tasks_due_today.each do |task_category, tasks| %>
+      <h2><%= task_category.name %></h2>
+      <% tasks.each do |task| %>
+        <p>
+          &gt; <%= task.name %><br>
+          &gt; Due Today @ <%= format_datetime(task.due_date) %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
