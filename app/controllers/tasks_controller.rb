@@ -4,6 +4,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def show
+    authorize_user(@task)
   end
 
   def new
@@ -15,18 +16,19 @@ class TasksController < ApplicationController
     @task.task_category = @task_category
 
     if @task.save
-      redirect_to task_category_path(@task_category)
+      redirect_to task_category_path(@task_category), notice: "Whoopee! You've just created a new task! 🎉"
     else
       render :new
     end
   end
 
   def edit
+    authorize_user(@task)
   end
 
   def update
     if @task.update(task_params)
-      redirect_to task_category_path(@task.task_category)
+      redirect_to task_category_path(@task.task_category), notice: "You've boosted productivity by editing your task! 🙌"
     else
       render :edit
     end
@@ -52,8 +54,8 @@ class TasksController < ApplicationController
   end
 
   def authorize_user(task)
-    unless task.user == current_user
-      redirect_to task_categories_path, alert: "You don't have permission to access this task category."
+    unless task.user_id == current_user.id
+      redirect_to task_categories_path, notice: "Oops! The task you're trying to access doesn't exist from you list. 👻"
     end
   end
 
