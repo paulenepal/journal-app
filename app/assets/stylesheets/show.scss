@@ -1,3 +1,5 @@
+// styling for show.html.erbs (task_cat & tasks)
+
 @import 'variables';
 
 .spacing {
@@ -18,23 +20,6 @@
     color: rgba(0, 0, 0, 0.231);
     font-size: 12px;
 }
-
-// .table-container {
-//     width: 90%;
-//     margin: auto;
-
-//     .table {
-//         width: 100%;
-//         border-collapse: collapse;
-//     }
-
-//     .table-row td {
-//         width: 90%;
-//         padding: 10px;
-//         border-bottom: 2px solid rgba(128, 128, 128, 0.774);
-//     }
-// }
-
 
 .table-container {
     table {
