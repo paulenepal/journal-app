@@ -8,7 +8,7 @@ class TaskCategoriesController < ApplicationController
   end
 
   def show
-    authorize_user(@task_category)
+    authorize_user(@task_category) # not sure why this doesn't work if i put this on before action
   end
 
   def new
@@ -25,6 +25,7 @@ class TaskCategoriesController < ApplicationController
   end
 
   def edit
+    authorize_user(@task_category) # not sure why this doesn't work if i put this on before action
   end
 
   def update
@@ -52,7 +53,7 @@ class TaskCategoriesController < ApplicationController
 
   def authorize_user(task_category)
     unless task_category.user == current_user
-      redirect_to task_categories_path, alert: "You don't have permission to access this task category."
+      redirect_to task_categories_path, notice: "Oops! The category doesn't exist from your list. 👻"
     end
   end
 
