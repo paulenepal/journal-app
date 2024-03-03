@@ -9,7 +9,14 @@
     <%= render 'form', task_category: @task_category %>
 
     <br />
-    <%= link_to 'Back to Main', task_categories_path %>
+    
+    <div class="back-container">
+      <div class="bck-btn">
+        <%= link_to task_categories_path do %>
+          <i class="fa-solid fa-chevron-left fa-xl"></i>
+        <% end %>
+      </div>
+    </div>
 
   </div>
   
