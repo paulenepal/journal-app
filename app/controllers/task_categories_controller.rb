@@ -4,7 +4,6 @@ class TaskCategoriesController < ApplicationController
   before_action :set_task_categories, only: [:index, :edit, :new, :show, :destroy]
   
   def index
-      @task_categories = current_user.task_categories
   end
 
   def show
