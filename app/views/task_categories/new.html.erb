@@ -1,5 +1,20 @@
 <%= render "layouts/navbar" %>
 
 <div class="spacing">
-  <%= render "form", task_category: @task_category %>
+  <div class="main-container">
+
+    <h1> New Category </h1>
+    <%= render "form", task_category: @task_category %>
+
+    <br />
+
+    <div class="back-container">
+      <div class="bck-btn">
+        <%= link_to task_categories_path do %>
+          <i class="fa-solid fa-chevron-left fa-xl"></i>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>
