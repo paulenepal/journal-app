@@ -19,7 +19,34 @@
         <span class="emoji-pin">
           <i class="fa-solid fa-calendar-day fa-nav" style="color: #e3008c;"></i>
         </span>
-        <%= link_to "Today", show_today_task_index_path %>
+        <%= link_to "Today", today_tasks_path %>
+      </span>
+    </li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-week" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Upcoming", upcoming_tasks_path %>
+      </span>
+    </li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-check" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Completed", completed_tasks_path %>
+      </span>
+    </li>
+
+    <li class="side-li">
+      <span class="pin-and-link">
+        <span class="emoji-pin">
+          <i class="fa-solid fa-calendar-xmark" style="color: #e3008c;"></i>
+        </span>
+        <%= link_to "Overdue", overdue_tasks_path %>
       </span>
     </li>
 
