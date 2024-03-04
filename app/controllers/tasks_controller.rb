@@ -39,6 +39,23 @@ class TasksController < ApplicationController
     redirect_to task_category_path(@task.task_category), notice: "Awesome! You've made a decisive move in boosting productivity by successfully deleting a task! 🤟"
   end
 
+  def today
+    @tasks_today = current_user.tasks.today
+  end
+
+  def completed
+    @tasks_completed = current_user.tasks.completed
+  end
+
+  def overdue
+    @tasks_overdue = current_user.tasks.overdue
+  end
+
+  def upcoming
+    @tasks_upcoming = current_user.tasks.upcoming
+  end
+
+
   private
 
   def task_params
@@ -55,7 +72,7 @@ class TasksController < ApplicationController
 
   def authorize_user(task)
     unless task.user_id == current_user.id
-      redirect_to task_categories_path, notice: "Oops! The task you're trying to access doesn't exist from you list. 👻"
+      redirect_to task_categories_path, alert: "Oops! The task you're trying to access doesn't exist from you list. 👻"
     end
   end
 
