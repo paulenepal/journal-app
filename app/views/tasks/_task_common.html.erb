@@ -1,0 +1,41 @@
+<br />
+<div class="table-container">
+  <table class="table">
+    <tbody>
+      <tr class="table-row">
+        <td class="task-name">
+          <%= task.name %>
+          <p class="desc">
+            <i class="fa-regular fa-note-sticky"></i> <%= task.description %>
+            <i class="fa-regular fa-calendar"></i> <%= format_datetime(task.due_date) %>
+          </p>
+        </td>
+
+        <td class="task-btn">
+          <%= form_with model: task, method: :patch, url: task_path(task.id) do |form| %>
+            <%= form.check_box :completed, onchange: "submitForm(this);" %>
+          <% end %>
+        </td>
+
+        <td class="task-btn">
+          <%= link_to edit_task_path(task) do %>
+            <i class="fa-solid fa-pen" style="color: #43766C;"></i>
+          <% end %>
+        </td>
+
+        <td class="task-btn">
+          <%= button_to task_path(task), method: :delete, onclick: "return confirm('Are you sure?');", class: "del-btn" do %>
+            <i class="fa-solid fa-trash-can" style="color: rgb(90, 5, 5);"></i>
+          <% end %>
+        </td>
+
+        <td class="task-btn">
+          <%= link_to task_path(task) do %>
+            <i class="fa-solid fa-ellipsis-vertical" style="color: #43766C;"></i>
+          <% end %>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
