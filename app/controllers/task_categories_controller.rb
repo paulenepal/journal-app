@@ -52,7 +52,7 @@ class TaskCategoriesController < ApplicationController
 
   def authorize_user(task_category)
     unless task_category.user == current_user
-      redirect_to task_categories_path, notice: "Oops! The category doesn't exist from your list. 👻"
+      redirect_to task_categories_path, alert: "Oops! The category doesn't exist from your list. 👻"
     end
   end
 
