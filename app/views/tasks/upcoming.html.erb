@@ -3,18 +3,16 @@
 <div class="spacing">
   <div class="main-container">
 
-      <div>
-        <h1>
-            Upcoming Tasks
-        </h1>
-        <% if @tasks_upcoming.length > 0 %>
-            <% @tasks_upcoming.each do |task| %>
-                <%= render "task_common", task: task %>
-            <% end %>
-        <% else %>
-            <br />
-            <div>No upcoming tasks.</div>
-        <% end  %>
+    <div>
+      <h1>🧿 Upcoming Tasks</h1>
+      <% if @tasks_upcoming.length > 0 %>
+          <% @tasks_upcoming.each do |task| %>
+              <%= render "task_common", task: task %>
+          <% end %>
+      <% else %>
+          <br />
+          <div>No upcoming tasks.</div>
+      <% end  %>
     </div>
 
   </div>
