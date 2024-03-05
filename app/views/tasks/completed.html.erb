@@ -4,9 +4,7 @@
   <div class="main-container">
 
       <div>
-        <h1>
-            Tasks Completed
-        </h1>
+        <h1>💃 Tasks Completed</h1>
         <% if @tasks_completed.length > 0 %>
             <% @tasks_completed.each do |task| %>
                 <%= render "task_common", task: task %>
