@@ -1,7 +1,8 @@
+<br />
+
 <%= form_with(model: task_category) do |form| %>
     <p>
-        <%= form.label :name, "Name" %><br>
-        <%= form.text_field :name %>
+        <%= form.text_field :name, placeholder: "Enter Category Name (maximum of 20 characters)" %>
     </p>
 
     <div class="button">
