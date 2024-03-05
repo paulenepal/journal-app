@@ -12,20 +12,55 @@
         <% end %>
       </p> <br />
 
-    <% @task_categories.each do |task_category| %>
-      <p>
-        <strong><i class="fa-solid fa-hashtag" style="color: #9c9fa5;"></i><%= task_category.name %></strong>
-        <span class="act-container"> 
-          <span class="link-to">
-            <%= link_to "Edit", edit_task_category_path(task_category) %> 
-            <%= link_to "Show", task_category_path(task_category) %>
-            <%= link_to "Add Task", new_task_category_task_path(task_category) %>
-          </span> 
-          <%= button_to "Delete", task_category_path(task_category), method: :delete, onclick: "return confirm('Are you sure?');" %>
-        </span>
-      </p>
+      <div class="table-container">
+        <table class="table">
+          <tbody>
+            <% if @task_categories.any? %>
+              <% @task_categories.each do |task_category| %>
+                <tr class="table-row">
+                  <td class="task-name">
+                    <strong><i class="fa-solid fa-hashtag" style="color: #9c9fa5;"></i><%= task_category.name %></strong>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to new_task_category_task_path(task_category) do %> 
+                      <span class="add-text"><i class="fa-solid fa-plus" style="color: #ff8787;"></i></span>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to edit_task_category_path(task_category) do %> 
+                      <i class="fa-solid fa-pen" style="color: #43766C;"></i>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">  
+                    <%= button_to task_category_path(task_category), method: :delete, onclick: "return confirm('Are you sure?');", class: "del-btn" do %>
+                      <i class="fa-solid fa-trash-can" style="color: rgb(90, 5, 5);"></i>
+                    <% end %>
+                  </td>
+
+                  <td class="task-btn">
+                    <%= link_to task_category_path(task_category) do %>
+                      <i class="fa-solid fa-ellipsis-vertical" style="color: #43766C;"></i>
+                    <% end %>
+                  </td>
+                  </span>
+
+                </tr>
+              <% end %>
+            <% else %>
+              <tr>
+                <td colspan="2">Add a category to start your productivity! </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+
       <br>  
-    <% end %>
+
     
   </div>
 </div>
