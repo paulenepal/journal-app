@@ -3,15 +3,15 @@
 <div class="spacing">
   <div class="main-container">
 
-      <div>
-        <h1>Overdue Tasks</h1>
-        <% if @tasks_overdue.length > 0 %>
-            <% @tasks_overdue.each do |task| %>
-                <%= render "task_common", task: task %>
-            <% end %>
-        <% else %>
-            <div>No overdue tasks.</div>
-        <% end  %>
+    <div>
+      <h1>🫢 Overdue Tasks</h1>
+      <% if @tasks_overdue.length > 0 %>
+          <% @tasks_overdue.each do |task| %>
+              <%= render "task_common", task: task %>
+          <% end %>
+      <% else %>
+          <div>No overdue tasks.</div>
+      <% end  %>
     </div>
 
   </div>
