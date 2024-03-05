@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task_category, only: [:new, :create]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task_categories # for the side nav
 
   def show
     authorize_user(@task)
@@ -63,7 +64,7 @@ class TasksController < ApplicationController
   end
 
   def set_task_category
-    @task_category = TaskCategory.find(params[:task_category_id])
+    @task_category = current_user.task_categories.find(params[:task_category_id])
   end
 
   def set_task
@@ -74,6 +75,10 @@ class TasksController < ApplicationController
     unless task.user_id == current_user.id
       redirect_to task_categories_path, alert: "Oops! The task you're trying to access doesn't exist from you list. 👻"
     end
+  end
+
+  def set_task_categories
+    @task_categories = current_user.task_categories.all
   end
 
 end
