@@ -4,12 +4,14 @@ one:
   name: MyText
   description: MyText
   due_date: 2024-02-23 19:07:28
-  category: one
+  task_category_id: 1
+  user_id: 1
   completed: false
 
 two:
   name: MyText
   description: MyText
   due_date: 2024-02-23 19:07:28
-  category: two
+  task_category_id: 2
+  user_id: 2
   completed: false
