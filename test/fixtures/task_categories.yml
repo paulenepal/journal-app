@@ -2,10 +2,10 @@
 
 one:
   name: MyText
-  task: one
-  user: one
+  user_id: 1
+  id: 1
 
 two:
   name: MyText
-  task: two
-  user: two
+  user_id: 2
+  id: 2
