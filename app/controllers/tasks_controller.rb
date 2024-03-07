@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   before_action :set_task_categories # for the side nav
 
   def show
-    authorize_user(@task)
+    user_not_authorized(@task)
   end
 
   def new
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    authorize_user(@task)
+    user_not_authorized(@task)
   end
 
   def update
@@ -71,7 +71,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-  def authorize_user(task)
+  def user_not_authorized(task)
     unless task.user_id == current_user.id
       redirect_to task_categories_path, alert: "Oops! The task you're trying to access doesn't exist from you list. 👻"
     end
