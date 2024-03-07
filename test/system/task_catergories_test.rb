@@ -4,11 +4,11 @@ class TaskCatergoriesTest < ApplicationSystemTestCase
   include Devise::Test::IntegrationHelpers
 
   setup do
-    sign_in @user = users(:one)
+    sign_in users(:user_one)
   end
 
   test "should get index" do
-    visit task_categories_url
+    visit task_categories_path
     assert_selector "h1", text: "🎯 My Plans"
   end
 
@@ -16,7 +16,7 @@ class TaskCatergoriesTest < ApplicationSystemTestCase
     visit task_categories_path
 
     within '.add' do
-      click_link "Add Category"
+      click_on "Add Category"
     end
 
     within 'form[action="/task_categories"]' do
@@ -28,7 +28,7 @@ class TaskCatergoriesTest < ApplicationSystemTestCase
   end
 
   test "should edit a Task Category" do
-    @task_category = task_categories(:one)
+    @task_category = task_categories(:cat_one)
     visit edit_task_category_path(@task_category)
 
     assert_selector 'input[type="text"]', visible: true, count: 1
@@ -39,7 +39,7 @@ class TaskCatergoriesTest < ApplicationSystemTestCase
   end
 
   test "should be able to create a task under a Task Category" do
-    @task_category = task_categories(:one)
+    @task_category = task_categories(:cat_one)
     visit task_category_path(@task_category)
 
     assert_text @task_category.name
