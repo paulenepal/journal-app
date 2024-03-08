@@ -1,5 +1,5 @@
 databases:
-  - name: minimalist
+  - name: planning_app
     databaseName: planning_app
     user: admin
     plan: free
