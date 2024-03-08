@@ -12,7 +12,7 @@ class TaskCategoryTest < ActiveSupport::TestCase
   test "should not save TaskCategory if name length > 20" do
     task_category = TaskCategory.new
     name = "This should not save. I am more than 20 characters."
-    assert_not task_category.save, "Saved the TaskCategory without name"
+    assert_not task_category.save, "Saved the TaskCategory with more than 20 chars."
   end
 
 end
