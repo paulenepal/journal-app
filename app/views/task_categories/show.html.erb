@@ -19,6 +19,12 @@
             <% if @task_category.tasks.any? %>
               <% @task_category.tasks.each do |task| %>
                 <tr class="table-row">
+                  <td class="task-btn">
+                    <%= form_with model: task, method: :patch, url: task_path(task.id) do |form| %>
+                      <%= form.check_box :completed, onchange: "this.form.submit()" %>
+                    <% end %>
+                  </td>
+
                   <td class="task-name">
                     <%= task.name %>
                     <p class="desc">
