@@ -43,7 +43,7 @@ class TaskCategoriesController < ApplicationController
   private
 
   def task_category_params
-    params.require(:task_category).permit(:name)
+    params.require(:task_category).permit(:name, :user_id)
   end
 
   def set_task_category
