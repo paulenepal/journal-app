@@ -57,7 +57,7 @@ class TaskCategoriesController < ApplicationController
   end
 
   def set_task_categories
-    @task_categories = current_user.task_categories.all
+    @task_categories = current_user.task_categories
   end
 
 end
